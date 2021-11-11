@@ -3,6 +3,9 @@
 $sql_category = "SELECT * FROM public.category";
 $query_category = pg_query($conn, $sql_category);
 
+$sql_store = "SELECT * FROM public.store";
+$query_store = pg_query($conn, $sql_store);
+
 // lấy dữ liệu
 if (isset($_POST['btnAdd'])) {
 
@@ -16,11 +19,12 @@ if (isset($_POST['btnAdd'])) {
     $procate      = $_POST['cateid'];
     $proimage      = $_FILES['Image'];
     $description      = $_POST['txtShort'];
+    $stid      = $_POST['txtStore'];
 
     copy($proimage['tmp_name'], "image/" . $proimage['name']);
     $filePic = $proimage['name'];
-    $result = pg_query($conn, "INSERT INTO public.product(productid,productname,price,quantity,categoryid,image,shortdes)
-    VALUES({$proid},'{$proname}','{$price}','{$quantity}',{$procate},'{$filePic}','{$description}')"); 
+    $result = pg_query($conn, "INSERT INTO public.product(productid,productname,price,quantity,categoryid,image,shortdes, storeid)
+    VALUES({$proid},'{$proname}','{$price}','{$quantity}',{$procate},'{$filePic}','{$description}', {$stid})"); 
 
     if ($result) {
         echo "Successfully!.";
@@ -84,6 +88,18 @@ if (isset($_POST['btnAdd'])) {
             <label for="lblShort" class="col-sm-2 control-label">Description(*): </label>
             <div class="col-sm-10">
                 <input type="text" name="txtShort" id="txtShort" class="form-control" placeholder="Short description" value='' />
+            </div>
+        </div>
+         
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Store ID(*): </label>
+            <div class="col-sm-10">
+                <select class="form-control" name="cateid">
+                    <?php
+                    while ($row_store = pg_fetch_assoc($query_store)) { ?>
+                        <option value="<?php echo $row_store['storeid']; ?>"> <?php echo $row_store['storename'] ?></option>}
+                    <?php } ?>
+                </select>
             </div>
         </div>
 

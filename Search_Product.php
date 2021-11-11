@@ -99,7 +99,6 @@ if (isset($_POST['txtSearch'])) {
                 while ($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)) {
                 ?>
                     <tr>
-                        <td><?php echo $id ?></td>
                         <td><?php echo $row["productname"]; ?></td>
                         <td><?php echo $row["price"]; ?></td>
                         <td><?php echo $row["quantity"]; ?></td>
