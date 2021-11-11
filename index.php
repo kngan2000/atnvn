@@ -133,7 +133,7 @@ include_once("connection.php");
 
 									<li class="dropdown"><a href="#">Store<i class="fa fa-angle-down"></i></a>
 										<ul role="menu" class="sub-menu">
-											<li><a href="?page=Add_Store">Add Store</a></li>
+											<li><a href="?page=add_store">Add Store</a></li>
 											<li><a href="?page=store">Store Management</a></li>
 
 										</ul>
