@@ -2,7 +2,7 @@
     include_once("connection.php");
 ?>
 <body>
-    <table width="500" border="1" >
+    <table width="100%" border="1" >
         <tr>
                 <th><strong>Store ID</strong></th>
                 <th><strong>Store Name</strong></th>
