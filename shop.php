@@ -3,7 +3,7 @@
 ?>
 <body>
     <div class="container">
-    <table width="500" border="1" >
+    <table width="100%" border="4" >
         <tr>
                 <th><strong>Product Name</strong></th>
                 <th><strong>Price</strong></th>
