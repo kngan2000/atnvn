@@ -130,6 +130,15 @@ include_once("connection.php");
 
 										</ul>
 									</li>
+
+									<li class="dropdown"><a href="#">Store<i class="fa fa-angle-down"></i></a>
+										<ul role="menu" class="sub-menu">
+											<li><a href="?page=Add_Store">Add Store</a></li>
+											<li><a href="?page=store">Store Management</a></li>
+
+										</ul>
+									</li>
+
 								<?php
 								} else {
 								?>
@@ -170,12 +179,12 @@ include_once("connection.php");
 			include_once("Category_Management.php");
 		} elseif ($page == "product_management") {
 			include_once("Product_Management.php");
-		} else if ($page == "update_category") {
-			include_once("Update_Category.php");
+		} else if ($page == "store") {
+			include_once("Store.php");
 		} else if ($page == "add_product") {
 			include_once("Add_Product.php");
-		} else if ($page == "update_product") {
-			include_once("Update_Product.php");
+		} else if ($page == "add_store") {
+			include_once("Add_Store.php");
 		} else if ($page == "logout") {
 			include_once("Logout.php");
 		} else if ($page == "Add_Category") {
