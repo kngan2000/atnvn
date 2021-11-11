@@ -24,6 +24,7 @@
                 <th><strong>Category ID</strong></th>
                 <th><strong>Image</strong></th>
                 <th><strong>Description</strong></th>
+                <th><strong>Store ID</strong></th>
                 <th><strong>Function</strong></th>
 
         </tr>
@@ -44,6 +45,7 @@
                     <img src="image/<?php echo $row["image"]; ?>" style="height: 100px; width: 100px;">
               </td>
               <td><?php echo $row["shortdes"];?></td>
+              <td><?php echo $row["storeid"];?></td>
               <td><button><a href="?page=product_management&&function=del&&id=<?php 
               echo $row["productid"]; ?>" onClick="return confirm ('Are you sure delete')">Delete</a></button></td>
             </tr>
