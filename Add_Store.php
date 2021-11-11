@@ -12,8 +12,8 @@ if (isset($_POST['submit'])) {
     $stname   = $_POST['txtstorename'];
     $stadd       = $_POST['txtaddress'];
     $stphone       = $_POST['txtphone'];
-    $result = pg_query($conn, "INSERT INTO public.store(storeid,storename,address,phonenumber ) 
-    VALUES ({$stid},'{$stname}','{$stadd}'), '{$stphone}')");
+    $result = pg_query($conn, "INSERT INTO public.store(storeid,storename,address,phonenumber) 
+    VALUES ({$stid},'{$stname}','{$stadd}','{$stphone}')");
 
     if ($result) {
         echo "Successfully!.";
