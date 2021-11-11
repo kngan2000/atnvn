@@ -15,7 +15,7 @@
 ?>
 
 <body>
-    <table width="500" border="1" >
+    <table width="100%" border="3" >
         <tr>
                 <th><strong>Product ID</strong></th>
                 <th><strong>Product Name</strong></th>
