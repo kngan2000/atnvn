@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
     <title>Store</title>
 </head>
 <body>
+<table width="500" border="1" >
 <h3>Add Store</h3>
     <form action="" method="POST">
         <table>
@@ -57,5 +58,6 @@ if (isset($_POST['submit'])) {
             </tr>
         </table>
     </form>
+    </table>
 </body>
 </html>
