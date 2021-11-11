@@ -9,6 +9,7 @@
                 <th><strong>Price</strong></th>
                 <th><strong>Image</strong></th>
                 <th><strong>Description</strong></th>
+                <th><strong>Function</strong></th>
 
         </tr>
         <tbody>
@@ -25,6 +26,7 @@
                     <img src="image/<?php echo $row["image"]; ?>" style="height: 100px; width: 100px;">
               </td>
               <td><?php echo $row["shortdes"];?></td>
+              <td><button>Buy</button></td>
             </tr>
             <?php $id++;}?>
             </tbody>
