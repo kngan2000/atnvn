@@ -23,18 +23,17 @@ if (isset($_POST['btnAdd'])) {
 
     copy($proimage['tmp_name'], "image/" . $proimage['name']);
     $filePic = $proimage['name'];
-    $result = pg_query($conn, "INSERT INTO public.product(productid,productname,price,quantity,categoryid,image,shortdes, storeid)
-    VALUES({$proid},'{$proname}','{$price}','{$quantity}',{$procate},'{$filePic}','{$description}', {$stid})"); 
+    $result = pg_query($conn, "INSERT INTO public.product(productid,productname,price,quantity,categoryid,image,shortdes,storeid)
+    VALUES({$proid},'{$proname}',{$price},{$quantity},{$procate},'{$filePic}','{$description}', {$stid})");
 
     if ($result) {
         echo "Successfully!.";
-
     } else
         echo "Có lỗi xảy ra trong quá trình thêm mới. <a href='?page=add_product'>Again</a>";
 }
 ?>
 
-<div class="container"> 
+<div class="container">
     <h2>Adding new Product</h2>
 
     <form id="frmProduct" name="frmProduct" method="POST" enctype="multipart/form-data" action="" class="form-horizontal" role="form">
@@ -71,7 +70,7 @@ if (isset($_POST['btnAdd'])) {
                 <select class="form-control" name="cateid">
                     <?php
                     while ($row_category = pg_fetch_assoc($query_category)) { ?>
-                        <option value="<?php echo $row_category['categoryid']; ?>"> <?php echo $row_category['categoryname'] ?></option>}
+<option value="<?php echo $row_category['categoryid']; ?>"> <?php echo $row_category['categoryname'] ?></option>}
                     <?php } ?>
                 </select>
             </div>
@@ -80,7 +79,7 @@ if (isset($_POST['btnAdd'])) {
         <div class="form-group">
             <label for="sphinhanh" class="col-sm-2 control-label">Image(*): </label>
             <div class="col-sm-10">
-                <input type="file" name="Image" id="txtImage" class="form-control" value=""/>
+                <input type="file" name="Image" id="txtImage" class="form-control" value="" />
             </div>
         </div>
 
@@ -90,7 +89,7 @@ if (isset($_POST['btnAdd'])) {
                 <input type="text" name="txtShort" id="txtShort" class="form-control" placeholder="Short description" value='' />
             </div>
         </div>
-         
+
         <div class="form-group">
             <label for="" class="col-sm-2 control-label">Store ID(*): </label>
             <div class="col-sm-10">
