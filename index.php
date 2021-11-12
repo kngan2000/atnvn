@@ -92,7 +92,7 @@ include_once("connection.php");
 						</div>
 					</div>
 				</div>
-</div>
+			</div>
 		</div>
 		<!--/header-middle-->
 		<div class="header-bottom">
@@ -111,12 +111,12 @@ include_once("connection.php");
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home</a></li>
-								
+
 								<?php
 								if (isset($_SESSION['username']) && $_SESSION['admin'] == 1) {
 								?>
-								<li class="dropdown"><a href="?page=shop">Shop</a>
-								</li>
+									<li class="dropdown"><a href="?page=shop">Shop</a>
+									</li>
 									<li class="dropdown"><a href="#">Product<i class="fa fa-angle-down"></i></a>
 										<ul role="menu" class="sub-menu">
 											<li><a href="?page=add_product">Add Product</a></li>
@@ -142,24 +142,24 @@ include_once("connection.php");
 								<?php
 								} else {
 								?>
-										<li class="nav-item"><a href="?page=shop">Shop</a></li>
+									<li class="nav-item"><a href="?page=shop">Shop</a></li>
 								<?php
 								}
 								?>
-
-						</div>
-						<div class="container">
-							<form action="Search_Product.php" method="POST">
-								<div class="col-sm-3  pull-right">
-									<div class="search_box pull-right">
-										<input type="text" name="txtSearch" placeholder="Search" />
-										<button class="btn btn-success search" type="submit" name="search" style=" background-color: #; border-color: #ffffff;">Search</button>
-									</div>
+								<div class="container">
+									<form action="?page=search" method="POST">
+										<div class="col-sm-3  pull-right">
+											<div class="search_box pull-right">
+												<input type="text" name="txtSearch" placeholder="Search" />
+												<button class="btn btn-success search" type="submit" name="search" href>Search</button>
+											</div>
+										</div>
+									</form>
 								</div>
-							</form>
 						</div>
 					</div>
 				</div>
+
 				<!--/header-bottom-->
 	</header>
 	<!--/header-->
@@ -171,7 +171,7 @@ include_once("connection.php");
 			include_once("Register.php");
 		} elseif ($page == "login") {
 			include_once("Login.php");
-		}else if ($page == "shop") {
+		} else if ($page == "shop") {
 			include_once("shop.php");
 		} elseif ($page == "search") {
 			include_once("Search_Product.php");
@@ -188,10 +188,16 @@ include_once("connection.php");
 		} else if ($page == "logout") {
 			include_once("Logout.php");
 		} else if ($page == "Add_Category") {
-		include_once("Add_Category.php");
-		} else {
-			include_once("content.php");
+			include_once("Add_Category.php");
+		} else if ($page == "Update_product") {
+			include_once("Update_product.php");
+		} else if ($page == "Update_category") {
+			include_once("Update_category.php");
+		} else if ($page == "Update_store") {
+			include_once("Update_store.php");
 		}
+	} else {
+		include_once("content.php");
 	}
 
 
@@ -199,7 +205,7 @@ include_once("connection.php");
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row">
-				<p class="pull-left">Copyright © 2021 ATN COMPANY. All rights reserved.</p>
+				<p class="pull-left" style="text-align: center; margin-left:35%;">Copyright © 2021 ATN COMPANY. All rights reserved.</p>
 			</div>
 		</div>
 	</div>
