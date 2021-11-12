@@ -19,7 +19,7 @@ if (isset($_POST['btnAdd'])) {
     $procate      = $_POST['cateid'];
     $proimage      = $_FILES['Image'];
     $description      = $_POST['txtShort'];
-    $stid      = $_POST['txtStore'];
+    $stid      = $_POST['storeid'];
 
     copy($proimage['tmp_name'], "image/" . $proimage['name']);
     $filePic = $proimage['name'];
@@ -80,7 +80,7 @@ if (isset($_POST['btnAdd'])) {
         <div class="form-group">
             <label for="sphinhanh" class="col-sm-2 control-label">Image(*): </label>
             <div class="col-sm-10">
-                <input type="file" name="Image" id="txtImage" class="form-control" value="" />
+                <input type="file" name="Image" id="txtImage" class="form-control" value=""/>
             </div>
         </div>
 
@@ -94,7 +94,7 @@ if (isset($_POST['btnAdd'])) {
         <div class="form-group">
             <label for="" class="col-sm-2 control-label">Store ID(*): </label>
             <div class="col-sm-10">
-                <select class="form-control" name="cateid">
+                <select class="form-control" name="storeid">
                     <?php
                     while ($row_store = pg_fetch_assoc($query_store)) { ?>
                         <option value="<?php echo $row_store['storeid']; ?>"> <?php echo $row_store['storename'] ?></option>}
