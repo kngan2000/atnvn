@@ -3,7 +3,6 @@
 // Nếu là sự kiện đăng ký thì xử lý
 if (isset($_POST['submit'])) {
 
-    //Nhúng file kết nối với database
     include_once('connection.php');
 
 
